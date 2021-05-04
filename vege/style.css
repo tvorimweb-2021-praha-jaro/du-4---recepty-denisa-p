@@ -1,11 +1,6 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, ::after, ::before { box-sizing: inherit; }
 
-
-/* -------------------------------------------------- */
-
-/*
+/* 
 pouzivame mobile first pristup
 tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni
 s pribyvajici sirkou pridavame media query pro
@@ -13,10 +8,19 @@ středně široké obrazovky:
 @media (min-width: 480px) {
 }
 široké obrazovky
-@media (min-width: 860px) {
+@media (min-width: 860px) { 
 }
 */
 
+html { 
+    box-sizing: border-box; 
+}
+
+*, 
+::after, 
+::before { 
+    box-sizing: inherit; 
+}
 
 body {
     margin: 0;
@@ -33,7 +37,208 @@ body {
     color: silver;
 }
 
+.recept {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    min-height: 90px;
+    padding: 0.5rem;
+    background-image: /* https://cssgradient.io/ */
+        linear-gradient(hsla(0 0% 0% / 0.3),hsla(0 0% 0% / 0.3)),
+        var(--background-recept);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    border: 1px solid #fff;
+    text-shadow: 0 0 2px hsla(0 0% 0% / 0.3);
+}
 
-/* ------------------------------- */
-/* ----- DOLE BUDE TVOJE CSS ----- */
-/* ------------------------------- */
+.recept-salat {
+    --background-recept: url("images/salat.jpg");
+    min-height: 200px;
+}
+
+.recept-chlebicek {
+    --background-recept: url("images/chlebicek.jpg");
+}
+
+.recept-pita {
+    --background-recept: url("images/cizrna.jpg");
+}
+
+.recept-tacos {
+    --background-recept: url("images/tacos.jpg");
+}
+
+.recept-burger {
+    --background-recept: url("images/burger.jpg");
+}
+
+.nazev-recept {
+    margin: 0;
+    font-weight: 800;
+    
+}
+
+.meta-recept {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+a {
+    color: white;
+}
+
+@media screen and (min-width: 320px) {
+    .recept {
+        min-height: 90px;
+    }
+
+    .recept-salat {
+        min-height: 200px;
+        
+    }
+
+    .recept-chlebicek{
+        order: 2;
+    }
+
+    .recept-pita {
+        order: 4;
+    }
+
+    .recept-tacos {
+        order: 3;
+    }
+
+    .recept-burger {
+        order: 5;
+    }
+
+    .meta-recept {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+    .nazev-recept {
+        font-size: 1.2rem;
+    }
+
+    .nazev-hlavni {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .obsah {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .recept {
+        min-height: 150px;
+    }
+
+    .recept-salat {
+        min-height: 250px;
+        flex-basis: 100%;
+        order: 1;
+    }
+
+    .recept-chlebicek{
+        flex-basis: 50%;
+        order: 2;
+    }
+
+    .recept-pita {
+        flex-basis: 50%;
+        order: 4;
+    }
+
+    .recept-tacos {
+        flex-basis: 50%;
+        order: 3;
+    }
+
+    .recept-burger {
+        flex-basis: 50%;
+        order: 5;
+    }
+
+    .meta-recept {
+        padding: 1.25rem;
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+    .nazev-recept {
+        font-size: 1.5rem;
+    }
+
+    .nazev-hlavni {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 1058px) {
+    .obsah {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .recept {
+         min-height: 200px;
+    }
+
+    .recept-salat {
+        min-height: 400px;
+        order: 1;
+        flex-basis: 33%;
+        flex: 1;
+    }
+
+    .recept-chlebicek{
+        order: 2;
+        flex-basis: 33%;
+        height: 50%;
+    }
+
+    .recept-pita {
+        order: 4;
+        flex-basis: 33%;
+        height: 50%;
+        
+    }
+
+    .recept-tacos {
+        order: 3;
+        flex-basis: 33%;
+        height: 50%;
+    }
+
+    .recept-burger {
+        order: 5;
+        flex-basis: 33%;
+        height: 50%;
+    }
+
+    .meta-recept {
+        padding: 1.25rem;
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+    .nazev-recept {
+        font-size: 1.75rem;
+    }
+
+    .nazev-hlavni {
+        font-size: 3rem;
+    }
+}
+
+
